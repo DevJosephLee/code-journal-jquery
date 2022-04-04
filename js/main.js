@@ -1,8 +1,6 @@
 /* global data */
 /* exported data */
-// $(".button").click(function(){
-//   $(".hello-world").text("Thanks for Clicking")
-// })
+
 let toggleSwitchClicked = false;
 
 $(".toggler-container").click(function() {
@@ -27,4 +25,18 @@ $(".modal-button-container").click(function() {
 
 $(".no-button").click(function() {
   $(".show").attr("class", "hidden");
+})
+
+let lightBulbClicked = false;
+
+$(".light-bulb").click(function() {
+  if (!lightBulbClicked) {
+    $(".light-bulb-container-black").attr("class", "light-bulb-container-white");
+    $(".off").attr("class", "on");
+    lightBulbClicked = true;
+  } else {
+    $(".light-bulb-container-white").attr("class", "light-bulb-container-black");
+    $(".on").attr("class", "off");
+    lightBulbClicked = false;
+  }
 })
