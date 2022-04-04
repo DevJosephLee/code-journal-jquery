@@ -20,3 +20,11 @@ $(".toggler-container").click(function() {
     toggleSwitchClicked = false;
   }
 })
+
+$(".modal-button-container").click(function() {
+  $(".hidden").attr("class", "show");
+})
+
+$(".no-button").click(function() {
+  $(".show").attr("class", "hidden");
+})
