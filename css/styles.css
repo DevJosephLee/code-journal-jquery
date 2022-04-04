@@ -1,0 +1,52 @@
+.toggler-container-black {
+  width: 150px;
+  height: 50px;
+  border: black 1px solid;
+  border-radius: 25px;;
+  position: relative;
+}
+
+.toggler-container-white {
+  width: 150px;
+  height: 50px;
+  border: white 1px solid;
+  border-radius: 25px;
+  position: relative;
+}
+
+.toggler-black {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+}
+
+.toggler-white {
+  position: absolute;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.toggle-text-black {
+  font-size: 1.5rem;
+}
+
+.toggle-text-white {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.bg-white {
+  background-color: white;
+  height: 100vh;
+}
+
+.bg-black {
+  background-color: black;
+  height: 100vh;
+}
