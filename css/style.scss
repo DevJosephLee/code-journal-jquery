@@ -1,0 +1,95 @@
+@mixin toggler-container {
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  position: relative;
+}
+
+@mixin toggler {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+$toggleFontSize : 1.5rem;
+$toggleBgHeight: 500px;
+
+button {
+  cursor: pointer;
+}
+
+.toggler-container-black {
+  @include toggler-container();
+  border: black 1px solid;
+}
+
+.toggler-container-white {
+  @include toggler-container();
+  border: white 1px solid;
+}
+
+.toggler-black {
+  @include toggler();
+  background-color: black;
+}
+
+.toggler-white {
+  @include toggler();
+  position: absolute;
+  left: 100px;
+  background-color: white;
+}
+
+.toggle-text-black {
+  font-size: $toggleFontSize;
+}
+
+.toggle-text-white {
+  font-size: $toggleFontSize;
+  color: white;
+}
+
+.bg-white {
+  background-color: white;
+  height: $toggleBgHeight
+}
+
+.bg-black {
+  background-color: black;
+  height: $toggleBgHeight;
+}
+
+.container {
+  max-width: 575px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
