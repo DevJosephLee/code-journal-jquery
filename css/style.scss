@@ -1,65 +1,132 @@
-.toggler-container-black {
-  width: 150px;
-  height: 50px;
-  border: black 1px solid;
-  border-radius: 25px;;
-  position: relative;
+* {
+  box-sizing: border-box;
 }
 
-.toggler-container-white {
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 575px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+@mixin toggler-container {
   width: 150px;
   height: 50px;
-  border: white 1px solid;
   border-radius: 25px;
   position: relative;
 }
 
-.toggler-black {
+@mixin toggler {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: black;
+}
+
+@mixin light-bulb-container {
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+@mixin light-bulb-button {
   cursor: pointer;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+}
+
+$toggleFontSize : 1.5rem;
+$toggleBgHeight: 500px;
+
+button,
+i {
+  cursor: pointer;
+}
+
+.toggler-container-black {
+  @include toggler-container();
+  border: black 1px solid;
+}
+
+.toggler-container-white {
+  @include toggler-container();
+  border: white 1px solid;
+}
+
+.toggler-black {
+  @include toggler();
+  background-color: black;
 }
 
 .toggler-white {
+  @include toggler();
   position: absolute;
   left: 100px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   background-color: white;
-  cursor: pointer;
 }
 
 .toggle-text-black {
-  font-size: 1.5rem;
+  font-size: $toggleFontSize;
 }
 
 .toggle-text-white {
-  font-size: 1.5rem;
+  font-size: $toggleFontSize;
   color: white;
 }
 
 .bg-white {
   background-color: white;
-  height: 500px;
+  height: $toggleBgHeight
 }
 
 .bg-black {
   background-color: black;
-  height: 500px;
+  height: $toggleBgHeight;
 }
 
 .modal-button {
   width: 200px;
   padding: 0.5rem;
-  cursor: pointer;
   background-color: #4A4AE8;
   color: white;
   border: none;
   border-radius: 3px;
-  font-size: 1.5rem;
+  font-size: $toggleFontSize
 }
 
 .overlay {
@@ -90,51 +157,32 @@
   padding: 0.5rem;
   color: white;
   border-radius: 3px;
-  cursor: pointer;
-  font-size: 1rem;
+  font-size: $toggleFontSize
 }
 
 .light-bulb-container-black {
-  height: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  margin-top: 50px;
+  @include light-bulb-container();
+  background-color: black
 }
 
 .light-bulb-container-white {
-  height: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FEF9F1;
-  margin-top: 50px;
+  @include light-bulb-container();
+  background-color: #FEF9F1
 }
 
 .off {
-  cursor: pointer;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  @include light-bulb-button();
   background-color: #252525;
-  border: none;
 }
 
 .on {
-  cursor: pointer;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  @include light-bulb-button();
   background-color: #F9EA84;
-  border: none;
   box-shadow: 5px 10px 20px 20px #fae984;
 }
 
 .carousel-container {
   margin: 50px 0;
-  /* display: flex;
-  justify-content: center; */
   width: 500px;
   height: 250px;
   border: 1px black solid;
@@ -151,11 +199,6 @@
   height: 15px;
   margin: 0 5px;
   border-radius: 50%;
-}
-
-i,
-.carousel-button {
-  cursor: pointer;
 }
 
 .black {
