@@ -1,3 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 575px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 50px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
 @mixin toggler-container {
   width: 150px;
   height: 50px;
@@ -59,37 +102,43 @@ button {
   height: $toggleBgHeight;
 }
 
-.container {
-  max-width: 575px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+.modal-button {
+  width: 200px;
+  padding: 0.5rem;
+  background-color: #4A4AE8;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: $toggleFontSize
 }
 
-.row {
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color:rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-wrap: wrap;
-}
-
-.justify-center {
   justify-content: center;
-}
-
-.align-center {
   align-items: center;
 }
 
-.center {
+.modal {
+  width: 500px;
+  height: 250px;
+  background-color: white;
   text-align: center;
+  position: relative;
 }
 
-.margin-top {
-  margin-top: 50px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
+.no-button {
+  width: 50px;
+  margin-top: 100px;
+  background-color: #EB5D5D;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 3px;
+  font-size: $toggleFontSize
 }
