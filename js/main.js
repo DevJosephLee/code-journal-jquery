@@ -40,3 +40,61 @@ $(".light-bulb").click(function() {
     lightBulbClicked = false;
   }
 })
+
+let intervalId = 0;
+const img = $(".carousel-image");
+const button = $(".carousel-button");
+
+setInterval(switchImg, 1000)
+
+function switchImg() {
+    intervalId++
+    for (let i = 0; i < img.length; i++) {
+      if (intervalId === parseInt(img[i].getAttribute('data-id'))) {
+        img[i].className = 'carousel-image show'
+        button[i].className = 'carousel-button black'
+      } else {
+        img[i].className = 'carousel-image hidden'
+        button[i].className = 'carousel-button'
+      }
+    }
+    if (intervalId === 4) {
+      intervalId = 0
+    }
+}
+
+$(".left-button").click(function(event) {
+  intervalId--
+  for (let i = 0; i < img.length; i++) {
+    if (intervalId === parseInt(img[i].getAttribute('data-id'))) {
+      img[i].className = 'carousel-image show'
+      button[i].className = 'carousel-button black'
+    } else {
+      img[i].className = 'carousel-image hidden'
+      button[i].className = 'carousel-button'
+    }
+  }
+  if (intervalId === 4) {
+    intervalId = 0
+  }
+  var interval = setInterval(switchImg, 1000);
+  clearInterval(interval);
+})
+
+$(".right-button").click(function(event) {
+  intervalId++
+  for (let i = 0; i < img.length; i++) {
+    if (intervalId === parseInt(img[i].getAttribute('data-id'))) {
+      img[i].className = 'carousel-image show'
+      button[i].className = 'carousel-button black'
+    } else {
+      img[i].className = 'carousel-image hidden'
+      button[i].className = 'carousel-button'
+    }
+  }
+  if (intervalId === 4) {
+    intervalId = 0
+  }
+  var interval = setInterval(switchImg, 1000);
+  clearInterval(interval);
+})
