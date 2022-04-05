@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
@@ -46,6 +47,22 @@
       <div class="light-bulb-container-black">
         <div class="light-bulb">
           <button class="off"></button>
+        </div>
+      </div>
+      <div class="carousel-container">
+        <div class="row align-center justify-center margin-top">
+          <i class="fas fa-chevron-left left-button"></i>
+          <img class="carousel-image show" src="images/baek.jpeg" alt="baek" data-id="1">
+          <img class="carousel-image hidden" src="images/bastlanich.jpeg" alt="batlanich" data-id="2">
+          <img class="carousel-image hidden" src="images/bottura.jpeg" alt="bottura" data-id="3">
+          <img class="carousel-image hidden" src="images/locatelli.jpeg" alt="locatelli" data-id="4">
+          <i class="fas fa-chevron-right right-button"></i>
+        </div>
+        <div class="row align-center justify-center margin-top">
+          <button data-view="baek" class="carousel-button black" data-id="1"></button>
+          <button data-view="batlanich" class="carousel-button" data-id="2"></button>
+          <button data-view="bottura" class="carousel-button" data-id="3"></button>
+          <button data-view="locatelli" class="carousel-button" data-id="4"></button>
         </div>
       </div>
     </div>

@@ -130,3 +130,34 @@
   border: none;
   box-shadow: 5px 10px 20px 20px #fae984;
 }
+
+.carousel-container {
+  margin: 50px 0;
+  /* display: flex;
+  justify-content: center; */
+  width: 500px;
+  height: 250px;
+  border: 1px black solid;
+
+}
+
+.carousel-image {
+  width: 100px;
+  margin: 0 75px;
+}
+
+.carousel-button {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+i,
+.carousel-button {
+  cursor: pointer;
+}
+
+.black {
+  background-color: black
+}
