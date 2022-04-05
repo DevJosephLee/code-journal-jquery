@@ -54,6 +54,22 @@ body {
   border-radius: 50%;
 }
 
+@mixin light-bulb-container {
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+@mixin light-bulb-button {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+}
+
 $toggleFontSize : 1.5rem;
 $toggleBgHeight: 500px;
 
@@ -141,4 +157,25 @@ button {
   color: white;
   border-radius: 3px;
   font-size: $toggleFontSize
+}
+
+.light-bulb-container-black {
+  @include light-bulb-container();
+  background-color: black
+}
+
+.light-bulb-container-white {
+  @include light-bulb-container();
+  background-color: #FEF9F1
+}
+
+.off {
+  @include light-bulb-button();
+  background-color: #252525;
+}
+
+.on {
+  @include light-bulb-button();
+  background-color: #F9EA84;
+  box-shadow: 5px 10px 20px 20px #fae984;
 }
